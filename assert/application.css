@@ -1,0 +1,104 @@
+/*
+
+
+
+ */
+
+body,html{height:100%;}
+body{padding-top: 105px;font: 12px/1.5 "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti}
+#main-content{min-height: 100%; padding-bottom: 200px;}
+.second_nav{ margin-left: 80px;}
+.copy-footer{padding: 20px 0;text-align: center;font-size: 12px;}
+.footer{color: #aaaaaa;background-color:#1f2f41;position:relative;margin-top:-100px;}
+#logo{height: 53px;padding-left: 20px;}
+#home_up_nav{background-color: #FFFFFF}
+#home_up_nav .background_color_white{background-color: #FFFFFF}
+#home_up_nav .color_inverse{color: #2f4154;}
+#home_up_nav .color_primary{color: #1abc9c;}
+.width_all{min-width:0 !important; width: 100%;}
+.select2-results {border: 1px solid #1abc9c;}
+.select.form-control, .select.select2-search input[type="text"] {border: 1px solid #ccc;height: 32px;}
+.select { min-width: 20px;}
+.select2-drop { min-width: 120px;}
+.todo { margin-bottom: 0;}
+.todo li { padding: 0 42px 0 25px;}
+.left-menu { position: static;z-index: auto;}
+.row {margin-left: 5px; margin-right: 5px;}
+.border_red{border: 2px solid red;}
+.word-break-all{word-break:break-all;}
+.bg-color{background-color: #1f2f41}
+.logo_size{height: 30px;width: 320px;}
+/*
+ *易用性改造
+*/
+/*字体使用*选择器统一浏览器端负担太大，目前只发现下列字体单独定义，暂时替代*选择器。后续发现其他的再添加或考虑其他方案*/
+.form-control, .select2-search input[type="text"] {font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;}
+/*:not(.glyphicon){font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;}*/
+.tooltip-inner {padding: 3px 8px; font-size: 10px;}
+.aside{background-color: #475669;}
+.aside > li > a { color: #fff;}
+.aside > .active {border-left: 5px solid #3091d1;}
+.aside > .active > a, .aside > .active > a:hover, .aside > .active > a:focus { background-color: #1F2D3D;}
+.aside > li > a:hover { color: #fff;background-color: #1F2D3D;}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {color: #fff;background-color: #3091d1;}
+.navbar-inverse .navbar-nav > .open > .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav > .open > .dropdown-menu > li > a:focus {background-color: #1F2D3D;}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus { color: #3091d1;}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {background-color: #3091d1;}
+.navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: #fff; border-bottom-color: #fff;}
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret, .navbar-inverse .navbar-nav > .dropdown > a:focus .caret { border-top-color: #3091d1; border-bottom-color: #3091d1;}
+.navbar-inverse .navbar-nav>.active>a .caret, .navbar-inverse .navbar-nav>.active>a:hover .caret, .navbar-inverse .navbar-nav>.active>a:focus .caret {border-top-color: #fff; border-bottom-color: #fff;}
+.navbar-inverse .navbar-nav > .open > a .caret, .navbar-inverse .navbar-nav > .open > a:hover .caret, .navbar-inverse .navbar-nav > .open > a:focus .caret {border-top-color: #fff; border-bottom-color: #fff;}
+.checkbox, .radio,.radio + .radio, .checkbox + .checkbox {margin-top: 0;}
+.checkbox .icon-unchecked::before { content: "";}
+.checkbox .icon-unchecked {display: inline;border: 1px solid #bfcbd9;border-radius: 4px; width: 20px; height: 20px; background-color: #fff;}
+/*按钮类*/
+.btn{color: #fff; padding: 9px 13px; font-size: 14px; line-height: 1.385; border-radius: 4px; width:78px;}
+.width-auto{width:auto;}
+.btn-primary {color: #fff; background-color: #3091d1;}
+.btn-primary:hover, .btn-primary.hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary { color: #fff; background-color: #3091d1;}
+.input-group-btn .btn-primary {background-color: #3091d1;color: #fff;border: 2px solid #3091d1;width: 38px;}
+.btn.btn-xs, .btn-group-xs > .btn { padding: 6px 9px; font-size: 12px; line-height: 1.083; border-radius: 3px;}
+.pagination li > a:hover, .pagination li > span:hover, .pagination li > a:focus, .pagination li > span:focus { background-color: #3091d1;}
+.pagination li.active > a, .pagination li.active > span, .pagination li:first-child.active > a, .pagination li:first-child.active > span {background-color: #3091d1;border: none;}
+.btn.btn-long{width:117px;}
+.btn.btn-super-long{width:130px;}
+.btn.btn-block{width:100%;}
+.primary-light{background-color: #72c4f5;}
+.green{background-color: #0fb98b;}
+.green-light{background-color: #3edfb3;}
+.btn.btn-small-height{line-height: 1.1;}
+.btn-info{color:#fff; background-color: #5bc0de}
+/*提示信息*/
+.help-block {color: #999999; margin: 10px 5px; font-size: 12px;}
+.help-block.inline-helper-block {display: inline}
+/*下拉列表*/
+/*.select-primary .select2-choice {color: #fff;background-color: #3091d1;}*/
+/*.select2-drop .select2-highlighted > .select2-result-label {color: #fff;background: #3091d1;}*/
+/*.select2-results {border: 1px solid #3091d1;}*/
+/*.select-primary .select2-choice:hover, .select-primary .select2-choice.hover, .select-primary .select2-choice:focus, .select-primary .select2-choice:active {color: #fff; background-color: #3091d1; border-color: #3091d1;}*/
+
+/*表格类*/
+.table{width: 100%;  max-width:100%; margin-bottom:20px;}
+.table.table-bordered{border: 1px solid #ddd;}
+.table > tbody > tr > td, .table > tbody > tr > th{ vertical-align:middle; padding: 10px; line-height: 1.4;}
+.table.nested_table_striped tbody tr:nth-child(4n+1){background-color: #eee;}
+.table th {font-size: 14px; font-weight: bold;}
+.table tr {font-size: 12px;}
+table caption{font-size: 14px; font-weight: bold; color: #000000;}
+
+/*字号*/
+.input-sm,.form-horizontal .control-label, .form-control,.select2-search input[type=text] {
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 6px;
+    padding: 10px 5px;
+}
+label,.bootstrap-tagsinput .tag,p span.label,span.label{font-size: 14px;}
+.font-size-large{font-size: 16px;}
+.font-size-super-large{font-size: 38px;}
+.font-size-more-large{font-size: 25px}/*用于首页*/
+.font-size-14{font-size: 14px;}  /*用于首页*/
+h6,.h6{font-size: 14px; font-weight: bold;}
+p,.helper_content p{ font-size: 12px; line-height: 17px; }
+p b{font-weight: bold; }
+.tile p {margin-bottom: 33px; font-size: 14px;text-align: left; height: 100px;}

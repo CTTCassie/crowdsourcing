@@ -1,0 +1,99 @@
+.processcontainer {
+	width: 90px;
+	border: 1px solid #6C9C2C;
+	height: 16px;
+
+	/* display: inline; */
+}
+
+div {
+	margin: auto;
+}
+
+#processbar {
+	background: #95CA0D;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarAutoTest {
+	background: #95CA0D;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarSmokeTest {
+	background: #95CA0D;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarTestWaiting {
+	background: #EABA6F;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarBiuld {
+	background: #95CA0D;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarBiuldF {
+	background: #F66E6E;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+.processbarBiuldA {
+	background: #CACACA;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 150%;
+}
+
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 0px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+p {
+font-size:14px;
+    font-family:Arial, Helvetica, sans-serif;
+    //color:#F00;
+    height:0px;
+    line-height:0px;
+    font-weight:normal;
+}
