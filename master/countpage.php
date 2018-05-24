@@ -1,7 +1,7 @@
    <?php  
 
                 include_once "../common/conn.php";
-                $activenum = 1;
+                $activenum = 5;
                 $value = $_GET['value'];   //获得日期
 
                 $newuser = 0;   //统计新注册用户
@@ -41,13 +41,13 @@
                 $stmt = $pdo->query($sql);//返回预处理对象
                 if($stmt->rowCount() > 0){
                     $info = $stmt->fetch(PDO::FETCH_ASSOC);//按照关联数组进行解析
-                    $sql_update = "UPDATE `report` SET `packetnum`='{$packetnum}',`task`='{$task}',`newuser`='{$newuser}',`activeuser`='{$activeuser}' WHERE `time` like '%{$value}%' ";
+                    $sql_update = "UPDATE `report` SET `packetnum`='{$packetnum}',`task`='{$task}',`newuser`='{$newuser}',`activeuser`='{$activeuser}' WHERE `flagtime` like '%{$value}%' ";
                     $rw = $pdo->exec($sql_update);
                     if($rw > 0){
-                        echo "<script>alert('统计成功111');
+                        echo "<script>alert('统计成功');
                         </script>";
                     }else{
-                        echo "<script>alert('统计失败111');
+                        echo "<script>alert('统计失败');
                         </script>";
                     }
                 }else{
@@ -55,10 +55,10 @@
                     $sql_insert = "INSERT INTO `report`(`packetnum`, `task`, `newuser`, `activeuser`, `time`, `flagtime`, `id`) VALUES ('{$packetnum}','{$task}','{$newuser}','{$activeuser}','{$date}','{$value}', null)";
                     $rw = $pdo->exec($sql_insert);
                     if($rw > 0){
-                        echo "<script>alert('统计成功222');
+                        echo "<script>alert('统计成功');
                         </script>";
                     }else{
-                        echo "<script>alert('统计失败222');
+                        echo "<script>alert('统计失败');
                         </script>";
                     }
                 }
