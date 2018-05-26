@@ -28,6 +28,12 @@
             $page=$_GET['page']; 
         } 
         $offset=$Page_size*($page-1);
+
+
+        date_default_timezone_set ("Asia/Chongqing");   //选用格林威志时间
+        $year = date("Y");
+        $month = date("m");   
+        $date = $year . "-" . $month;
     ?>
 
     <meta charset="UTF-8">
@@ -44,7 +50,6 @@
         searchData = function(){   //查询数据
             var value = $("#date1").val();
             var date1= $.trim(value); 
-            alert(date1);
             $.get('countpage.php',{
                 value:date1,
                 page:1
@@ -74,16 +79,14 @@
             echo "<table width='75%' cellspacing='0'  cellpadding='0' border='1' style='width:75%;table-layout:fixed'>";
             echo "<tr height='40px' bgcolor='#00FFFF'>
                   <th style='width:5%;table-layout:fixed'>发包个数</th>
-                  <th style='width:5%;table-layout:fixed'>月任务</th>
                   <th style='width:5%;table-layout:fixed'>新注册用户个数</th>
                   <th style='width:5%;table-layout:fixed'>活跃用户个数</th>
                   </tr>";
 
-            $sql = "SELECT `packetnum`, `task`, `newuser`, `activeuser`, `time`, `id` FROM `report` ORDER BY `time` desc limit $offset,$Page_size";
+            $sql = "SELECT `packetnum`, `newuser`, `activeuser`, `time`, `id` FROM `report`  WHERE `flagtime` like '%{$date}%'ORDER BY `time` desc limit $offset,$Page_size";
             foreach ($pdo->query($sql) as $row){
                  echo "<tr height='50px'>"; 
                  echo "<td>{$row['packetnum']}</td>"; 
-                 echo "<td>{$row['task']}</td>"; 
                  echo "<td>{$row['newuser']}</td>"; 
                  echo "<td>{$row['activeuser']}</td>"; 
                  echo "</tr>";
@@ -92,7 +95,7 @@
             echo "<br><br><br>";
         echo "</div>";
 
-        echo '<div class="page" align="right"  style="font-size:14px">'; 
+        /*echo '<div class="page" align="right"  style="font-size:14px">'; 
             $countpages = "共 " . $count . " 条记录；" . "共 " . $pages . " 页";
             echo $countpages,"&nbsp;&nbsp;&nbsp;&nbsp;";
 
@@ -129,7 +132,7 @@
                 } 
                 echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;";
             echo '</div>'; 
-        echo "<br><br><br><br><br>";
+        echo "<br><br><br><br><br>";*/
 
      ?>
 </table>

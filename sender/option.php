@@ -21,7 +21,7 @@ if (!empty($_POST["action"])) {
 
             $sql = "SELECT * FROM `sender` WHERE `name`='{$name}'";
             $stmt = $pdo->query($sql);  
-            $sql_insert = "";
+
             if($stmt->rowCount()>0){   //数据已存在
                 $sql_update = "UPDATE `sender` SET `age`='{$age}',`telphone`='{$telphone}',`trade`='{$trade}',`unitname`='{$unitname}',`postion`='{$postion}',`area`='{$area}',`timeline`='{$date}' WHERE `name`='{$name}'";
                 $rw = $pdo->exec($sql_update);
@@ -61,11 +61,18 @@ if (!empty($_POST["action"])) {
             $validtime = $_POST['validtime'];
             $remark = $_POST['remark'];
             $status = "未测试";
-            $sql = "SELECT * FROM `appinformation` WHERE `item`='{$item}'";
+            date_default_timezone_set ("Asia/Chongqing");   //选用格林威志时间
+            $year = date("Y");
+            $month = date("m");
+            $day = date("d");
+            $date = $year . "-" . $month . "-" . $day;
+
+            $sql = "SELECT * FROM `appinformation` WHERE `item`='{$item}' ";
             $stmt = $pdo->query($sql);  
             $sql_insert = "";
+
             if($stmt->rowCount()>0){   //数据已存在
-                $sql_update = "UPDATE `appinformation` SET `time`='{$time}',`describe`='{$describe}',`telphone`='{$telphone}',`price`='{$price}',`validtime`='{$validtime}',`remark`='{$remark}' WHERE `item`='{$item}'";
+                $sql_update = "UPDATE `appinformation` SET `time`='{$time}',`describe`='{$describe}',`telphone`='{$telphone}',`price`='{$price}',`validtime`='{$validtime}',`remark`='{$remark}', `flagtime`='{$date}' WHERE `item`='{$item}'";
                 $rw = $pdo->exec($sql_update);
                 if($rw > 0){
                     echo "<script>alert('数据保存成功');
@@ -78,7 +85,7 @@ if (!empty($_POST["action"])) {
                 }
             }
             else{
-                $sql_insert = "INSERT INTO `appinformation`(`item`, `time`, `describe`, `telphone`, `price`, `validtime`, `remark`, `status`, `id`) VALUES ('{$item}','{$time}','{$describe}','{$telphone}','{$price}','{$validtime}', '{$remark}','{$status}', null)";
+                $sql_insert = "INSERT INTO `appinformation`(`item`, `time`, `describe`, `telphone`, `price`, `validtime`, `remark`, `status`, `flagtime`, `id`) VALUES ('{$item}','{$time}','{$describe}','{$telphone}','{$price}','{$validtime}', '{$remark}','{$status}', '{$date}',null)";
 
                 $rw = $pdo->exec($sql_insert);
                 if($rw > 0){
